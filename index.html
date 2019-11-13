@@ -18,21 +18,21 @@
             This website pulls data using an API and displays it when the user
             clicks a button.
         </h2> -->
-        <script>
-            fireAPI();
-        </script>
         <h1 id = 'top'>Fortune Teller</h1>
         <hr id = 'line'></hr>
         <div class= 'container'>
             <img id='fortuneTeller' src="fortune.jpg" class='center'></img>
             <p1 id = 'second' >Click the button to reveal your fortune!</p1>
-            <h5 class = "text-warning">If you get 'undefined' then wait a little and click the button again!
+            <h5 class = "text-warning">If you get 'undefined' or nothing, then wait a little and click the button again!
             Refreshing the page before clicking the button will give you a new fortune!</h5>
         </div>
         <div class = "button" >
-            <button type="button" class="btn btn-success"; onclick=displayFortune()>Fortune</button>
+            <button type="button" class="btn btn-success"; onclick= "fireAPI() ;displayFortune()">Fortune</button>
+            <p>
+                <!--Left blank for white space between button and fortune-->
+            </p>
         </div>
-        <p2 id = 'getFortune' class="text-primary"></p2>
+        <p2 id = 'getFortune' class="font-weight-bold text-primary border border-success pt-2 pl-2 pb-2 pr-2" ></p2>
     </body>
 
 

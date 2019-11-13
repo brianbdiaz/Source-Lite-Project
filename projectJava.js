@@ -17,18 +17,21 @@ function fireAPI(){
 }
 function displayFortune(){
     let container = document.getElementById('getFortune');
+    //if (container.ChildNode !== null){
+  // container.parentNode.removeChild(container);
+//}
     let fortuneStr = JSON.stringify(fortune);
-    for (i= 0; i <fortuneStr.length-1; i++){
-        console.log(fortuneStr.substring(i,i+2));
-        if (fortuneStr.charAt(i) === "\\"){
-        //if (fortuneStr.charAt(i+1) === "t" || fortuneStr.charAt(i+1) == "n")
-        //{
-            fortuneStr = fortuneStr.replace(fortuneStr.substring(i, i+2), "  ");
-            //fortuneStr = fortuneStr.replace(fortuneStr.charAt(i+1), "  ");
-            console.log(fortuneStr);
-        //}
+    let fortuneStrShort = fortuneStr.replace(fortuneStr.substring(0,11), "");
+        fortuneStrShort = fortuneStrShort.replace(fortuneStrShort.substring(fortuneStrShort.length -1, fortuneStrShort.length), "");
+    for (i= 0; i <fortuneStrShort.length-1; i++){
+        console.log(fortuneStrShort.substring(i,i+2));
+        if (fortuneStrShort.charAt(i) === "\\"){
+        
+            fortuneStrShort = fortuneStrShort.replace(fortuneStrShort.substring(i, i+2), "  ");
+            console.log(fortuneStrShort);
     }
+    
     }
-    let fortuneStrTextNode = document.createTextNode(fortuneStr);
+    let fortuneStrTextNode = document.createTextNode(fortuneStrShort);
     container.appendChild(fortuneStrTextNode);
 }
