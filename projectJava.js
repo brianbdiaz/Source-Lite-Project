@@ -32,6 +32,15 @@ function displayFortune(){
     }
     
     }
-    let fortuneStrTextNode = document.createTextNode(fortuneStrShort);
+    let fortuneStrWithSpace = (fortuneStrShort + "\n");
+    console.log (fortuneStrWithSpace);
+    let fortuneStrTextNode = document.createTextNode(fortuneStrWithSpace);
     container.appendChild(fortuneStrTextNode);
+    container.appendChild(document.createElement("br"));
+}
+
+function atSameTime()
+{
+    fireAPI();
+    displayFortune();
 }
